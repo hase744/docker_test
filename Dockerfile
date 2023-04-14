@@ -21,3 +21,4 @@ RUN bundle install
 
 # ホスト側（ローカル）の全てのディレクトリをDocekrコンテナの/workdir配下に追加。
 ADD . /workdir
+CMD ["sh", "/start.sh"]
