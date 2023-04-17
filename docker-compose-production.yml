@@ -1,7 +1,7 @@
 version: '3'
 services:
   db:
-    image: mysql:8.0
+    image: mariadb:10.4.14
     command: bundle exec unicorn_rails -c config/unicorn.rb -E production -D
     volumes:
       - ./mysql/mysql_data:/var/lib/mysql

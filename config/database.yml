@@ -16,10 +16,10 @@ default: &default
   username: root
   password: password
   socket: /tmp/mysql.sock
-  host: localhost
 
 development:
   <<: *default
+  host: db
   database: docker_test_development
 
 # Warning: The database defined as "test" will be erased and
@@ -51,6 +51,7 @@ test:
 #
 production:
   <<: *default
+  host: localhost
   database: docker_test_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
