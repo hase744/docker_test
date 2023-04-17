@@ -10,9 +10,12 @@ services:
 
     environment:
       MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: docker_test
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
   web:
-    build: 
-      context: ./nginx_docker_production
+    build: .
+      #context: ./nginx_docker_production
     #　↑ 本番環境用に作ったディレクトリでnginxによるコンテナを構築する。
     command: bundle exec unicorn_rails -c config/unicorn.rb -E production -D
     volumes:
