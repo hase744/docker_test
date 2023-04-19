@@ -17,6 +17,7 @@ default: &default
   password: password
   socket: /tmp/mysql.sock
   host: <%=  ENV['DATABASE_HOST']%>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   
 
 development:
@@ -53,6 +54,4 @@ test:
 production:
   <<: *default
   database: docker_test_production
-  username: root
-  password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
